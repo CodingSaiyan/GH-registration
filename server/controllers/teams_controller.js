@@ -20,7 +20,7 @@ module.exports = {
         try {
           const db = req.app.get('db')
             
-          let teams = await db.getTeams()
+          let teams = await db.getAllTeams()
           res.send(teams)
          
         } catch (error) {

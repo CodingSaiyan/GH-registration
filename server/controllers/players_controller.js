@@ -3,10 +3,10 @@ module.exports = {
         try {
             const db = req.app.get('db')
 
-            let { firstName, lastName, playerNumber } = req.body;
+            let {team_id, firstName, lastName, playerNumber } = req.body;
             
 
-            let players = await db.createPlayer({ firstName, lastName, playerNumber })
+            let players = await db.createPlayer({ team_id, firstName, lastName, playerNumber })
 
             res.send(players)
 
