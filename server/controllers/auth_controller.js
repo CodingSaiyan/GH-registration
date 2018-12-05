@@ -21,7 +21,10 @@ module.exports = {
     
           delete user.password
           req.session.user = user
+          let team = await db.getUserTeam(user.id)
+          req.session.user.team = team
           res.send(req.session.user)
+
     
         } catch (error) {
           console.log('error logging in:', error)

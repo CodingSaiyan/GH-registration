@@ -5,9 +5,10 @@ module.exports = {
 
             let {team_id, firstName, lastName, playerNumber } = req.body;
             
-
+            
             let players = await db.createPlayer({ team_id, firstName, lastName, playerNumber })
-
+            
+            //want to add an if check to see if players exist
             res.send(players)
 
         } catch (error) {
@@ -34,9 +35,10 @@ module.exports = {
             const db = req.app.get('db')
 
             let { id } = req.params
-             let { firstName, lastName, playerNumber, goals, assists } = req.body;
+            let teamId = req.session.user.team[0].id;
+             let { firstname, lastname, playernumber, goals, assists } = req.body;
 
-             let player = await db.updatePlayer([firstName, lastName, playerNumber, goals, assists ])
+             let player = await db.updatePlayer([id, firstname, lastname, playernumber, goals, assists, teamId ])
 
              res.send(player)
 
@@ -49,9 +51,11 @@ module.exports = {
       delete: async (req, res) => {
           try {
             const db = req.app.get('db')
-            let { id } = req.params
+            let { id } = req.params;
+            let teamId = req.session.user.team[0].id;
 
-            let player = await db.deletePlayer(id)
+            let player = await db.deletePlayer([id, teamId])
+            console.log(player)
             res.send(player)
 
           } catch (error) {
@@ -73,6 +77,16 @@ module.exports = {
             console.log('error fethcing player:', error)
             res.status(500).send(error)
         }
+      },
+
+      // players for individual team
+      getTeamPlayers: async (req, res) => {
+        const db = req.app.get('db')
+        let { id } = req.params
+        let players = await db.team_players(id)
+
+
+        res.send(players)
       }
 
 }

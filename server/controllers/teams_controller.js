@@ -55,7 +55,7 @@ module.exports = {
             res.send(team)
 
           } catch (error) {
-            console.log('error updating team:', error)
+            console.log('error deleting team:', error)
             res.status(500).send(error)
           }
       },
@@ -73,6 +73,24 @@ module.exports = {
             console.log('error fethcing team:', error)
             res.status(500).send(error)
         }
+      },
+
+      getUserTeam: async (req, res) => {
+          try {
+            const db = req.app.get('db')
+            let { id } = req.session.user
+            let teamResponse = await db.getUserTeam(id)
+            let team = { ...teamResponse[0] }
+            let players = await db.getTeamPlayers(team.id)
+            
+            team.players = players
+
+            res.send(team)
+
+          } catch (error) {
+            console.log('error fethcing users team:', error)
+            res.status(500).send(error)
+          }
       }
 
 }

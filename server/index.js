@@ -32,13 +32,17 @@ app.get('/auth/currentUser', authCtrl.getCurrentUser)
 app.get('/teams', TC.read);
 app.post('/teams', TC.create);
 app.put('/teams/:id', TC.update);
-app.delete('teams/:id', TC.delete);
+app.delete('/teams/:id', TC.delete);
+app.get('/teams/currentTeam', TC.getUserTeam);
+app.get('/teams/:id', TC.getTeam);
 
 //Players endpoints
 app.get('/players', PC.read);
 app.post('/players', PC.create);
 app.put('/players/:id', PC.update);
-app.delete('players/:id', PC.delete);
+app.delete('/players/:id', PC.delete);
+app.get('/players/:id', PC.getPlayer);
+
 
 
 

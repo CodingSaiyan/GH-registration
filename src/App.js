@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { userLoggedIn } from './Redux/reducer'
+import router from './router';
+import Header from './components/Header/Header';
+import { withRouter } from 'react-router-dom';
+
+
+
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      isLoading: false
+    }
+  }
+
+  componentDidMount() {
+    axios.get('/auth/currentUser').then(response => {
+      if (response.data) {
+        this.props.userLoggedIn(response.data)
+      }
+
+      this.setState({
+        isLoading: false
+      })
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return this.state.isLoading ?
+      <div></div> :
+        <div>
+         <Header />
+              { router }
+        </div>
   }
 }
 
-export default App;
+export default withRouter (connect(null, { userLoggedIn })(App));
