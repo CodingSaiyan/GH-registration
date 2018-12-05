@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import './HockeyCard.css';
 import { connect } from 'react-redux'
 import { setPlayers } from '../../Redux/reducer';
 import { setTeams } from '../../Redux/reducer';
 
 class HockeyCard extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             edit: false,
-            firstname: "",
-            lastname: "",
-            playernumber: ""
+            firstname: this.props.player.firstname,
+            lastname: this.props.player.lastname,
+            playernumber: this.props.player.playernumber
         }
     }
  
@@ -39,26 +40,23 @@ class HockeyCard extends Component {
                
 
                 <div>
-                    <input value={firstname} type="text" name={firstname} onChange={(e) => this.handlePlayer(e)} placeholder="First Name" />
-                    <input value={lastname} type="text" name={lastname} onChange={(e) => this.handlePlayer(e)} placeholder="Last Name" />
-                    <input value={playernumber} type="text" name={playernumber} onChange={(e) => this.handlePlayer(e)} placeholder="#" />
+                    <input value={playernumber} type="text" name="playernumber" maxLength="2" onChange={this.handlePlayer} placeholder="#" />
+                    <input value={firstname} type="text" name="firstname" onChange={this.handlePlayer} placeholder="First Name" />
+                    <input value={lastname} type="text" name="lastname" onChange={this.handlePlayer} placeholder="Last Name" />
                     <button onClick={() => {
         // semi-colon?     
-                      this.props.update(firstname, lastname, playernumber, player.id); this.toggleEdit()} }>Add</button >
+                      this.props.update(playernumber, firstname, lastname,  player.id); this.toggleEdit()} }>Add</button >
                         <button onClick={this.toggleEdit}>CLOSE </button>
                 </div>
                 
                 )
                         
             : (
+                <div className="something">
+                <p>{player.playernumber}</p> <p>{player.firstname}</p> <p>{player.lastname}   <button id='edit' onClick={this.toggleEdit}>edit</button>
+                <button onClick={() => this.props.delete(player.id)}>Delete</button></p>
 
-            <tr>
-                <td>{player.playernumber}</td>
-                <td>{player.firstname}</td>
-                <td>{player.lastname}</td>
-                <td onClick={() => {this.props.update(player.id); this.toggleEdit()}}>edit</td>
-                <td onClick={() => this.props.delete(player.id)}>Delete</td>
-            </tr>
+            </div>
                 // <div>
                 //     {this.props.player.firstname} {this.props.player.lastname} {this.props.player.playernumber}
                 //     <button id='edit'onClick={this.toggleEdit}>Edit

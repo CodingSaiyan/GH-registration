@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Team_Registration_Form.css';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { setPlayers } from '../../Redux/reducer';
@@ -91,15 +92,14 @@ class Team_Registration_Form extends Component {
         })
     }
 
-    update = (id) => {
-        let { firstname, lastname, playernumber} = this.state
+    update = (playernumber, firstname, lastname, id) => {
         axios.put(`/players/${id}`, {firstname, lastname, playernumber}).then(results => {
-            this.props.setPlayers(results)
+            this.props.setPlayers(results.data)
         })
     }
 
     render() {
-        
+        console.log("players", this.props.players)
         var teamDisplay = this.props.players.map((player, i) => {
            return <HockeyCard 
             key={i}
@@ -126,29 +126,22 @@ class Team_Registration_Form extends Component {
                     <div>
                         {/* This is where the team name goes */}
                         <h1>{this.state.name}</h1>
-                        <h2>Team Roster</h2>
+                        <h3>Add a player:</h3>
                         <label>Player #</label>
-                        <input value={Number(this.state.playerNumber)} type="text" name="playerNumber" maxLength="2" onChange={this.handleChange} />
+                        <input value={this.state.playerNumber} type="text" name="playerNumber" maxLength="2" onChange={this.handleChange} />
                         <label>First name:</label>
                         <input value={this.state.firstName} type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
                         <label>Last Name:</label>
                         <input value={this.state.lastName} type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
                         <button onClick={this.handlePlayerClick} >Submit</button>
                     </div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        </thead>
-                    <tbody>
+                    <div className="something">
+                    <h2>#</h2>
+                    <h2>First Name</h2>
+                    <h2>Last Name</h2>
+                    </div>
                         {teamDisplay}
-                    </tbody>
-                    </table>
+                
                 </div> }
 
             </div>

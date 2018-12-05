@@ -37,7 +37,8 @@ module.exports = {
             let { id } = req.params
             let teamId = req.session.user.team[0].id;
              let { firstname, lastname, playernumber, goals, assists } = req.body;
-
+              console.log(id)
+              console.log(teamId)
              let player = await db.updatePlayer([id, firstname, lastname, playernumber, goals, assists, teamId ])
 
              res.send(player)
@@ -55,7 +56,7 @@ module.exports = {
             let teamId = req.session.user.team[0].id;
 
             let player = await db.deletePlayer([id, teamId])
-            console.log(player)
+
             res.send(player)
 
           } catch (error) {
