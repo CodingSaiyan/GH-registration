@@ -9,7 +9,7 @@ import Team_Registration_Form from './components/Team_Registration_Form/Team_Reg
 export default (
   <Switch>
     <Route exact path='/' />
-        {/* <Route path="/teams" /> */}
+        {/* <Route path="/teams/show"  /> */}
         <Route path='/teams/team_registration_form' component={ Team_Registration_Form } />
         <Route path="/auth/login" component={Login} />
         <Route path="/auth/register" component={Register} />

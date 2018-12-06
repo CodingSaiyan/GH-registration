@@ -6,11 +6,15 @@ const express = require('express'),
       session = require('express-session'),
       authCtrl = require('./controllers/auth_controller'),
       TC = require('./controllers/teams_controller'),
-      PC = require('./controllers/players_controller');
+      PC = require('./controllers/players_controller'),
+      path = require('path');
 
 let { CONNECTION_STRING, APP_PORT, SESSION_SECRET } = process.env;
 
 app.use(bodyParser.json());
+
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(session({
     resave: true,
     saveUninitialized: false,

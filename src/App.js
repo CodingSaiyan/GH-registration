@@ -6,8 +6,13 @@ import { userLoggedIn } from './Redux/reducer'
 import router from './router';
 import Header from './components/Header/Header';
 import { withRouter } from 'react-router-dom';
+import Dropdown from './components/Dropdown/Dropdown';
 
-
+var displayDropdown = (
+  <div style={{display: 'flex', justifyContent: 'left'}} >
+    <Dropdown />
+  </div>
+  );
 
 
 class App extends Component {
@@ -30,11 +35,15 @@ class App extends Component {
     })
   }
 
+
+
   render() {
     return this.state.isLoading ?
       <div></div> :
         <div>
+          
          <Header />
+         <div>{displayDropdown}</div>
               { router }
         </div>
   }
