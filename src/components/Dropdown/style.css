@@ -1,0 +1,156 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    
+}
+
+
+.nav-container {
+    background: #2C2923;
+    /* width: 400px; */
+    width: 15%;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    display: none;
+    
+}
+
+.brand-container {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand {
+    font-weight: regular;
+    color: #808080;
+    border-top: 5px solid #808080;
+    border-bottom: 5px solid #808080;
+    opacity: .25;
+
+
+}
+
+
+.brandBold {
+    font-weight: bold;
+}
+
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    color: yellow;
+}
+
+div a {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: black;
+}
+
+
+.g-menu {
+    line-height: 2.5;
+}
+
+.s-menu {
+    
+    line-height: 2.5;
+}
+
+.c-menu {
+    line-height: 2.5;
+}
+
+#headingOne {
+    
+    background: #FDBF13;
+   
+    
+}
+
+#headingTwo {
+    background: white;
+}
+
+#headingThree {
+    background: #949494;
+}
+
+
+.gcard{
+    background: #FDBF13;
+    
+
+}
+
+.scard {
+    background: white;
+}
+
+.ccard {
+    background: #949494
+}
+
+
+.card {
+    background: #2C2923;
+    margin: 0;
+    padding: 0;
+    border: 0px
+}
+
+#shop-btn {
+    background: rgb(61, 128, 182);
+}
+
+.footer {
+
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+
+}
+
+
+
+
+@media(max-width: 1330px){
+    .nav-container {
+        width: 25%;
+    }
+} 
+
+@media(max-width: 930px){
+    .nav-container {
+        width: 40%;
+    }
+} 
+
+@media (max-width: 680px) {
+    .nav-container {
+        width: 50%
+    }
+}
+
+@media(max-width: 542px) {
+    .nav-container {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+  
+}

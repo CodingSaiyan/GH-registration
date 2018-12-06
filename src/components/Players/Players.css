@@ -1,0 +1,12 @@
+body {
+    color: #FDBF13;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+th, tr, td {
+    border: 1px solid yellow;
+}
