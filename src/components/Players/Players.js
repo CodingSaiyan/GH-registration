@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Players.css';
+import { connect } from 'react-redux'
+import { setPlayers } from '../../Redux/reducer';
 
 class Players extends Component {
-    constructor() {
-        super()
-
-        this.state={
-            players: []
-        }
-    }
 
     componentDidMount() {
         axios.get('/players/stats').then(response => {
-            this.setState({
-                players: response.data
-            })
+            this.props.setPlayers(response.data)
         }).catch(err => {console.log(`Error! Failed to retrieve Stats ${err}`)})
     }
 
     render(){
         let r = 1;
-        let { players } = this.state;
+        let { players } = this.props;
         let statsDisplay = players.map((stat, i) => {
             return (
                 <tbody key={i}>
             <tr>
                 <td>{r++}</td>
-            <td>{stat.teamname}</td>
+            <td>{stat.name}</td>
                 <td>{stat.firstname}</td>
                 <td>{stat.lastname}</td>
                 <td>{stat.playernumber}</td>
@@ -63,4 +56,11 @@ class Players extends Component {
     }
 }
 
-export default Players
+function mapStateToProps(state) {
+    let { players } = state
+    return {
+      players
+    }
+  }
+
+export default connect(mapStateToProps, { setPlayers})(Players)

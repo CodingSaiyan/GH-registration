@@ -91,6 +91,18 @@ module.exports = {
             console.log('error fethcing users team:', error)
             res.status(500).send(error)
           }
+      },
+
+      getAllTeams: async (req, res) => {
+        try{
+          const db = req.app.get('db')
+          let teams = await db.getAllTeams();
+
+          res.send(teams)
+        } catch (error) {
+          console.log('error fethcing all teams:', error)
+          res.status(500).send(error)
+        }
       }
 
 }

@@ -7,7 +7,8 @@ const express = require('express'),
       authCtrl = require('./controllers/auth_controller'),
       TC = require('./controllers/teams_controller'),
       PC = require('./controllers/players_controller'),
-      path = require('path');
+      path = require('path'),
+      stripe = require("stripe")("sk_test_BtL1WUqUk9WX91F5HiGV15Yc");
 
 let { CONNECTION_STRING, APP_PORT, SESSION_SECRET } = process.env;
 
@@ -26,6 +27,16 @@ massive(CONNECTION_STRING).then(db => {
     console.log('Golden db connected!')
   })
 
+
+  const charge = stripe.charges.create({
+    amount: 1500,
+    currency: 'usd',
+    source: 'tok_visa',
+    receipt_email: 'jenny.rosen@example.com',
+  });
+
+  console.log(charge)
+
 //auth endpoints
 app.post('/auth/login', authCtrl.login)
 app.post('/auth/register', authCtrl.register)
@@ -34,6 +45,7 @@ app.get('/auth/currentUser', authCtrl.getCurrentUser)
   
 //Teams endpoints
 app.get('/teams', TC.read);
+app.get('/teams', TC.getAllTeams);
 app.post('/teams', TC.create);
 app.put('/teams/:id', TC.update);
 app.delete('/teams/:id', TC.delete);
@@ -42,6 +54,7 @@ app.get('/teams/:id', TC.getTeam);
 
 //Players endpoints
 app.get('/players', PC.read);
+app.get('/players/stats', PC.getAllPlayers);
 app.post('/players', PC.create);
 app.put('/players/:id', PC.update);
 app.delete('/players/:id', PC.delete);

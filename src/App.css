@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  background: #2C2923;
+  background: url('GH_Website-Hero-v4-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  max-width: 1500px;
+ 
 }
 
 .App-header {

@@ -1,36 +1,31 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux'
+import { setTeams } from '../../Redux/reducer';
+
+
 
 class Standings extends Component {
-    constructor() {
-        super()
-
-        this.state = {
-            standings: []
-        }
-    }
 
     componentDidMount() {
-        axios.get('/teams/standings').then(response => {
+        axios.get('/teams').then(response => {
             console.log(response);
-            this.setState({
-                standings: response.data
-            })
+            this.props.setTeams(response.data)
         }).catch(err => {console.log(`Error! Did not get standings! ${err}`)})
     }
 
     render(){
         let s = 1;
-        let { standings } = this.state;
-        let standingsDisplay = standings.map((standing, i) => {
+        let { teams } = this.props;
+        let standingsDisplay = teams.map((team, i) => {
             return (
             <tr key={i}>
                 <td>{s++}</td>
-                <td>{standing.teamname}</td>
-                <td>{standing.wins}</td>
-                <td>{standing.losses}</td>
-                <td>{standing.ties}</td>
-                <td>{standing.points}</td>
+                <td>{team.name}</td>
+                <td>{team.wins}</td>
+                <td>{team.losses}</td>
+                <td>{team.ties}</td>
+                <td>{team.points}</td>
             </tr>
             )
         })
@@ -56,4 +51,12 @@ class Standings extends Component {
     }
 }
 
-export default Standings
+function mapStateToProps(state) {
+    let { teams } = state
+    return {
+      teams
+    }
+  }
+
+
+export default connect(mapStateToProps, { setTeams })(Standings)

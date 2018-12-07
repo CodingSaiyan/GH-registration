@@ -88,6 +88,15 @@ module.exports = {
 
 
         res.send(players)
+      },
+
+
+      getAllPlayers: async (req, res) => {
+        
+        const db = req.app.get('db')
+
+        let players = await db.getAllPlayers()
+        res.send(players)
       }
 
 }

@@ -7,6 +7,7 @@ import router from './router';
 import Header from './components/Header/Header';
 import { withRouter } from 'react-router-dom';
 import Dropdown from './components/Dropdown/Dropdown';
+import Sidebar from './components/Sidebar/Sidebar';
 
 
 var displayDropdown = (
@@ -41,12 +42,14 @@ class App extends Component {
   render() {
     return this.state.isLoading ?
       <div></div> :
-        <div>
-          
-         <Header />
+      
+        <div className="App">
+         {/* <Header /> */}
          <div>{displayDropdown}</div>
               { router }
+              <Sidebar />
         </div>
+      
   }
 }
 
