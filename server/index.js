@@ -7,8 +7,7 @@ const express = require('express'),
       authCtrl = require('./controllers/auth_controller'),
       TC = require('./controllers/teams_controller'),
       PC = require('./controllers/players_controller'),
-      path = require('path'),
-      stripe = require("stripe")("sk_test_BtL1WUqUk9WX91F5HiGV15Yc");
+      path = require('path');
 
 let { CONNECTION_STRING, APP_PORT, SESSION_SECRET } = process.env;
 
@@ -28,14 +27,6 @@ massive(CONNECTION_STRING).then(db => {
   })
 
 
-  const charge = stripe.charges.create({
-    amount: 1500,
-    currency: 'usd',
-    source: 'tok_visa',
-    receipt_email: 'jenny.rosen@example.com',
-  });
-
-  console.log(charge)
 
 //auth endpoints
 app.post('/auth/login', authCtrl.login)
