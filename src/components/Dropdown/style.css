@@ -10,18 +10,19 @@
 .nav-container {
     background: #2C2923;
     min-width: 288px;
-    width: 15%;
+    width: 20%;
     height: 100vh;
     text-align: center;
     margin: 0;
     padding: 0;
     position: fixed;
-    /* display: none; */
+    overflow: auto;
     
 }
 
 .brand-container {
     height: 120px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +34,8 @@
     border-top: 5px solid #808080;
     border-bottom: 5px solid #808080;
     opacity: .25;
+    margin-left: 25px;
+    margin-right: 25px;
 
 
 }
@@ -134,15 +137,15 @@ div a {
     }
 }  */
 
-@media(max-width: 930px){
+/* @media(max-width: 930px){
     .nav-container {
-        width: 40%;
+        width: 100%;
     }
 } 
 
 @media (max-width: 680px) {
     .nav-container {
-        width: 50%
+        width: 100%
     }
 }
 
@@ -153,4 +156,4 @@ div a {
         width: 100%;
     }
   
-}
+} */

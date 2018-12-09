@@ -67,6 +67,10 @@ module.exports = {
             let teamResponse = await db.getTeam(id)
             let team = teamResponse[0]
 
+            let players = await db.getTeamPlayers(team.id)
+            
+            team.players = players
+
             res.send(team)
 
         } catch (error) {

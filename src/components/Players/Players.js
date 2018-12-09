@@ -8,6 +8,7 @@ class Players extends Component {
 
     componentDidMount() {
         axios.get('/players/stats').then(response => {
+            console.log(response.data)
             this.props.setPlayers(response.data)
         }).catch(err => {console.log(`Error! Failed to retrieve Stats ${err}`)})
     }
@@ -17,40 +18,74 @@ class Players extends Component {
         let { players } = this.props;
         let statsDisplay = players.map((stat, i) => {
             return (
-                <tbody key={i}>
-            <tr>
-                <td>{r++}</td>
-            <td>{stat.name}</td>
-                <td>{stat.firstname}</td>
-                <td>{stat.lastname}</td>
-                <td>{stat.playernumber}</td>
-                <td>{stat.goals}</td>
-                <td>{stat.assists}</td>
-                <td>{stat.points}</td>
+                <div className="playerStats">
+                <div>{stat.playernumber}</div>
+                <div>{stat.firstname}</div>
+                <div>{stat.lastname}</div>
+                <div>{stat.name}</div>
+                <div>{stat.goals}</div>
+                <div>{stat.assists}</div>
+                <div>{stat.points}</div>
                 
-            </tr>
-            </tbody>
+                </div>
     
             )
         })
-        return (<div className="container">
-            <h1>Players Class Component</h1>
-            <table>
-                <thead>
-                <tr>
-                <th>Rank</th>
-                <th>Team</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Ties</th>
-                <th>Points</th>
-            </tr>
-            </thead>
+        return (
+
+
+        <div className="container">
+        <h1>Golden Hockey</h1>
+        <h2>STATS</h2>
+        <div class="accordion" id="accordion2">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h3 class="mb-0">
+        <button class="btn btn-link less" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+          Division A
+        </button>
+      </h3>
+      
+    </div>
+    <div className="greyLine"></div>
+    <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion2">
+      <div class="card-body">
             {statsDisplay}
-            
-            </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+          Division B
+        </button>
+      </h5>
+     
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion2">
+      <div class="card-body">
+      {/* Content */}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+          Division C
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+      <div class="card-body">
+            {/* Content */}
+      </div>
+    </div>
+  </div>
+</div>
+            <h1>Players Class Component</h1>
+
             </div>
         )
     }

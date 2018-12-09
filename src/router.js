@@ -9,11 +9,13 @@ import Landing from './components/Landing/Landing'
 import Teams from './components/Teams/Teams'
 import Standings from './components/Standings/Standings'
 import Players from './components/Players/Players'
+import Team from './components/Team/Team'
 
 export default (
   <Switch>
         <Route exact path='/' component={ Landing } />
         <Route exact path='/teams' component={ Teams } />
+        <Route path='/teams/:id' component={ Team } />
         <Route path='/teams/standings' component={ Standings } />
         <Route path='/players' component={ Players } />
         <Route path='/teams/team_registration_form' component={ Team_Registration_Form } />

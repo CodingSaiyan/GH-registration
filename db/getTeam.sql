@@ -1,4 +1,7 @@
-SELECT t.*, u.name as teamManager, u.id as userId
-FROM teams t
-JOIN users u ON u.id = t.user_id
+SELECT *
+FROM players p
+JOIN teams t ON t.id = p.team_id
 WHERE t.id = $1;
+
+
+

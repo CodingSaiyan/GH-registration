@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { setTeams } from '../../Redux/reducer';
+import './Standings.css';
 
 
 
@@ -30,7 +31,7 @@ class Standings extends Component {
             )
         })
         return (
-            <div>
+            <div className="standingsDiv">
                 <table>
                     <thead>
                         <tr>

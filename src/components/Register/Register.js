@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import './Register.css'
 
 import { userLoggedIn } from '../../Redux/reducer'
 
@@ -39,7 +40,7 @@ class Register extends Component {
   render() {
     return this.props.isAuthenticated ? 
     <Redirect to="/teams/team_registration_form" /> :
-    <div>
+    <div className="registerDiv">
       <h1>Registration</h1>
       <input 
         type="text" 

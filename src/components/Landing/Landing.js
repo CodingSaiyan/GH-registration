@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Landing.css';
 import axios from 'axios';
-
+import { Link, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux'
+import {userLoggedOut} from '../../Redux/reducer';
 
 
 class Landing extends Component {
@@ -36,32 +38,51 @@ class Landing extends Component {
             }).catch(Error => {console.log('did not get the weather')})
 
         }
+
+        logout = () => {
+            axios.get('/auth/logout').then(response => {
+                this.props.userLoggedOut()
+                this.props.history.push('/')
+            })
+        }
     
     render() {
         let { city, state, date, tempurature, condition, image, height, width } = this.state;
         console.log(this.state)
-    return (
-            <div className="landing">
-            <div className="menu-filler">
-            
-            </div>
+    return ( this.props.isAuthenticated ?
+          
             <div className="landingBody">
-                <h1>GOLDEN JERSEY</h1>
+                <img src="../img/GH_Golden Hockey_onblack.eps" alt="" />
                 <div>
                     <p>{city}, {state}</p>
-                    <p>{date}</p>
-                    <p>{tempurature}</p>
+                    {/* <p>{date}</p> */}
+                    <p>{tempurature}&#176;</p>
                     <p>{condition}</p>
-                    <img src={image} height={height} width={width} />
+                    {/* <img src={image} height={height} width={width} /> */}
                 </div>
+                <div><h5><span onClick={this.logout}>Logout</span> <i class="fas fa-sign-out-alt"></i></h5></div>
             </div>
-            <div className="sidebar-filler">
-
+            :
+            <div className="landingBody">
+            <img src="../img/GH_Golden Hockey_onblack.eps" alt="" />
+            <div>
+                <p>{city}, {state}</p>
+                {/* <p>{date}</p> */}
+                <p>{tempurature}&#176;</p>
+                <p>{condition}</p>
+                {/* <img src={image} height={height} width={width} /> */}
             </div>
-            </div>
-
-       
+            <div><h5><i class="fas fa-user-plus"></i> <Link to="/auth/register" ><span>Register</span></Link> / <Link to="/auth/login" ><span>Login</span></Link> <i class="fas fa-sign-in-alt"></i></h5></div>
+        </div>
     )
     }
 }
-export default Landing;
+
+function mapStateToProps(state) {
+    let{isAuthenticated} = state
+    return {
+        isAuthenticated
+    }
+ }
+ 
+ export default withRouter(connect (mapStateToProps, {userLoggedOut})(Landing))

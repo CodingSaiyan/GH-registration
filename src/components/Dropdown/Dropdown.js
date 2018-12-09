@@ -10,9 +10,10 @@ class Dropdown extends React.Component {
       
       <div className="brand-container">
         <h2 className="brand">
-          <span className="brandBold">GOLDEN</span>HOCKEY
+        <span className="brandBold">GOLDEN</span>HOCKEY
         </h2>
       </div>
+      
       <div className="accordion" id="accordionExample">
   <div className="card">
     <div className="card-header" id="headingOne">

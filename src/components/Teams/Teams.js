@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { setTeams } from '../../Redux/reducer';
-
+import { Link } from 'react-router-dom'
+import './Teams.css'
 
 
 class Teams extends Component {
@@ -17,17 +18,21 @@ class Teams extends Component {
     render() {
         let { teams } = this.props;
         let teamsDisplay = teams.map((team, i) => {
-            return (<div key={i}> 
-                <h2>{team.name}</h2>
-                <img src={team.logo} alt="" />
+            return (<div className="col teamDiv" key={i}> 
+                <Link to={`/teams/${team.id}`} ><h2>{team.name}</h2></Link> 
+                <img src={team.logo} height="200" width="200" alt="" />
                 <p>{team.wins}-{team.losses}-{team.ties}</p>
             </div>
             )
         })
         return (
-            <div>
+            <div className="teamsDisplay">
                 <h1>This is the Teams Component!</h1>
-                {teamsDisplay}
+                <div className="container">
+                <div className="row">
+                    {teamsDisplay}
+                </div>
+                </div>
             </div>
         )
     }

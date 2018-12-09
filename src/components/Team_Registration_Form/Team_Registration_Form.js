@@ -109,7 +109,7 @@ class Team_Registration_Form extends Component {
             />
         })
         return (
-            <div>
+            <div className="teamregistrationDiv">
                 <h1>Team Registration</h1>
                 { !this.state.team_id? <div>
                     <h2>Create Team</h2>
