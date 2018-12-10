@@ -13,3 +13,10 @@
 .playerH {
     padding-top: 30px;
 }
+
+@media (max-width: 768px) {
+    .teamregistrationDiv {
+        width: 100%;
+        padding-bottom: 200px;
+    }
+}
