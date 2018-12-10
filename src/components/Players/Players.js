@@ -19,13 +19,13 @@ class Players extends Component {
         let statsDisplay = players.map((stat, i) => {
             return (
                 <div className="playerStats">
-                <div>{stat.playernumber}</div>
+                <div>#{stat.playernumber}</div>
                 <div>{stat.firstname}</div>
                 <div>{stat.lastname}</div>
                 <div>{stat.name}</div>
-                <div>{stat.goals}</div>
-                <div>{stat.assists}</div>
-                <div>{stat.points}</div>
+                <div>{stat.goals} G</div>
+                <div>{stat.assists} A</div>
+                <div>{stat.points} PTS</div>
                 
                 </div>
     
