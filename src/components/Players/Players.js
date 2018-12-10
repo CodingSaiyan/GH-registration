@@ -31,6 +31,11 @@ class Players extends Component {
     
             )
         })
+
+        if(statsDisplay[0]) {
+
+        }
+
         return (
 
 
@@ -38,7 +43,7 @@ class Players extends Component {
         <h1>Golden Hockey</h1>
         <h2>STATS</h2>
         <div class="accordion" id="accordion2">
-  <div class="card">
+  <div class="card gcard">
     <div class="card-header" id="headingOne">
       <h3 class="mb-0">
         <button class="btn btn-link less" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
@@ -55,7 +60,7 @@ class Players extends Component {
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingTwo">
+    <div class="card-header" id="headingFour">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
           Division B
@@ -65,12 +70,12 @@ class Players extends Component {
     </div>
     <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion2">
       <div class="card-body">
-      {/* Content */}
+      {statsDisplay}
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingThree">
+    <div class="card-header" id="headingFive">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
           Division C
@@ -79,7 +84,7 @@ class Players extends Component {
     </div>
     <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
       <div class="card-body">
-            {/* Content */}
+      {statsDisplay}
       </div>
     </div>
   </div>

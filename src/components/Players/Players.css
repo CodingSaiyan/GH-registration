@@ -41,4 +41,25 @@ table tr {
 .playerStats {
     display: flex;
     justify-content: space-between;
+    background: white;
+    margin: 7px;
+    padding: 7px;
+    color: black;
+    text-transform: uppercase;
+
+}
+
+.card-header, #headingOne, .work {
+    
+    background: #FDBF13;
+   
+    
+}
+
+#headingTwo {
+    background: white;
+}
+
+#headingThree {
+    background: #949494;
 }
