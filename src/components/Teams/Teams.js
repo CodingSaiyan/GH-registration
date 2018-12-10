@@ -20,7 +20,7 @@ class Teams extends Component {
         let teamsDisplay = teams.map((team, i) => {
             return (<div className="col col-xs teamDiv" key={i}> 
                 <Link to={`/teams/${team.id}`} ><h2>{team.name}</h2></Link> 
-                <img src={team.logo} height="200" width="200" alt="" />
+                <img src={team.logo} height="150" width="150" alt="" />
                 <p>{team.wins}-{team.losses}-{team.ties}</p>
             </div>
             )
