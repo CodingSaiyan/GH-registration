@@ -135,10 +135,11 @@ class Team_Registration_Form extends Component {
                         <input value={this.state.lastName} type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
                         <button onClick={this.handlePlayerClick} >Submit</button>
                     </div>
+                    <h3 className="playerH">Players: </h3>
                     <div className="something">
-                    <h2>#</h2>
+                    {/* <h2>#</h2>
                     <h2>First Name</h2>
-                    <h2>Last Name</h2>
+                    <h2>Last Name</h2> */}
                     </div>
                         {teamDisplay}
                 

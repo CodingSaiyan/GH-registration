@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {userLoggedOut} from '../../Redux/reducer';
+import jersey from './goldenjersey.png';
 
 
 class Landing extends Component {
@@ -52,7 +53,7 @@ class Landing extends Component {
     return ( this.props.isAuthenticated ?
           
             <div className="landingBody">
-                <img src="../img/GH_Golden Hockey_onblack.eps" alt="" />
+                <div className="image"><img src={jersey} className="image" alt="" /></div>
                 <div>
                     <p>{city}, {state}</p>
                     {/* <p>{date}</p> */}
@@ -64,7 +65,7 @@ class Landing extends Component {
             </div>
             :
             <div className="landingBody">
-            <img src="../img/GH_Golden Hockey_onblack.eps" alt="" />
+            <div className="image"><img src={jersey} className="image" alt="" /></div>
             <div>
                 <p>{city}, {state}</p>
                 {/* <p>{date}</p> */}

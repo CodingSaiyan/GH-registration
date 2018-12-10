@@ -1,8 +1,15 @@
 .standingsDiv {
-    width: 100%;
-    display: flex;
+    width: 70%;
+    margin-top: 2%;
+    /* display: flex; */
 }
 
 .standings {
-    
+    background: white;
+    color: black;
+    margin: 7px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+
 }

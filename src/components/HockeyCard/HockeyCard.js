@@ -33,7 +33,7 @@ class HockeyCard extends Component {
     render() {
         let { firstname, lastname, playernumber } = this.state;
         let { player } = this.props;
-           return <div>{this.state.edit ?
+           return <div className="container">{this.state.edit ?
                    
 
                 (
@@ -47,14 +47,16 @@ class HockeyCard extends Component {
         // semi-colon?     
                       this.props.update(playernumber, firstname, lastname,  player.id); this.toggleEdit()} }>Add</button >
                         <button onClick={this.toggleEdit}>CLOSE </button>
+                        
                 </div>
                 
                 )
                         
             : (
                 <div className="something">
-                <p>{player.playernumber}</p> <p>{player.firstname}</p> <p>{player.lastname}   <button id='edit' onClick={this.toggleEdit}>edit</button>
-                <button onClick={() => this.props.delete(player.id)}>Delete</button></p>
+                <p>{player.playernumber}</p> <p>{player.firstname}</p> <p>{player.lastname}</p>
+                <div><button id='edit' onClick={this.toggleEdit}>edit</button></div>
+                <div><button onClick={() => this.props.delete(player.id)}>Delete</button></div>
 
             </div>
                 // <div>

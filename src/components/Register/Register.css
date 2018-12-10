@@ -1,8 +1,12 @@
 .registerDiv {
-    width: 100%;
+    width: 70%;
+    margin-top: 15%;
+    
+
 }
 
 button {
     background: lightgrey;
     margin-left: 2%;
 }
+

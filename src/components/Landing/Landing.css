@@ -38,7 +38,7 @@ span:hover {
 .landingBody {
     background: url('./img/GH_Website-Hero-v4.jpg');
     background-size: cover;
-    width: 100%;
+    width: 70%;
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
@@ -47,6 +47,13 @@ span:hover {
     /* margin-left: 20%; */
 }
 
+.image {
+    width: 400px;
+    height: 50px;
+   margin-top: 20px;
+   
+  
+}
 /* .sidebar-container {
     width: 520px;
     position: fixed;

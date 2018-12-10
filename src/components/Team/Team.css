@@ -1,8 +1,8 @@
 .TeamDiv {
 
     flex-direction: column;
-    border: 2px dashed orange;
-    width: 100%;
+   
+    width: 70%;
 }
 
 .roster {
@@ -10,6 +10,14 @@
     width: 100%;
 }
 
-.wider {
+
+
+.roster {
+    display: flex;
+    justify-content: space-between;
+    margin: 7px;
+    color: black;
+    background: white;
     width: 100%;
+    padding: 3px;
 }

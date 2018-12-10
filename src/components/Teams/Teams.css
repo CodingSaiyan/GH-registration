@@ -1,5 +1,7 @@
 .teamsDisplay {
-    width: 100%;
+    width: 70%;
+  
+    
 }
 
 .spread {
@@ -8,9 +10,20 @@
 
 .container {
     width: 100%;
+    
 }
 
 .header {
     margin-top: 2%;
     font-weight: bold;
+}
+
+.teamDiv {
+   
+    margin: 10px 20px;
+    
+}
+
+.fluid-container {
+    
 }

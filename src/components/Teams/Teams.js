@@ -29,7 +29,7 @@ class Teams extends Component {
             <div className="teamsDisplay">
                 <h1 className="header">TEAMS IN TOURNAMENT</h1>
                 <hr />
-                <div className="container">
+                <div className="fluid-container">
                 <div className="row">
                     {teamsDisplay}
                 </div>

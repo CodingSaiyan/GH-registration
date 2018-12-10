@@ -23,16 +23,19 @@ class Standings extends Component {
             <div className="standings" key={i}>
                 <div>{s++}</div>
                 <div>{team.name}</div>
-                <div>{team.wins}</div>
-                <div>{team.losses}</div>
-                <div>{team.ties}</div>
-                <div>{team.points}</div>
+                <div>{team.wins} W</div>
+                <div>{team.losses} L</div>
+                <div>{team.ties} T</div>
+                <div>{team.points} PTS</div>
             </div>
             )
         })
         return (
             <div className="standingsDiv">
+            <h1>Standings</h1>
+            <div className="container">
                 {standingsDisplay}
+            </div>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 .teamregistrationDiv {
     /* margin-left: 40%; */
-    width: 100%;
+    width: 70%;
 }
 
 .something {
@@ -9,4 +9,8 @@
     padding: 0;
     margin: 0;
     
+}
+
+.playerH {
+    padding-top: 30px;
 }
