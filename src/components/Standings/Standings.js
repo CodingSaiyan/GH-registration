@@ -20,33 +20,19 @@ class Standings extends Component {
         let { teams } = this.props;
         let standingsDisplay = teams.map((team, i) => {
             return (
-            <tr key={i}>
-                <td>{s++}</td>
-                <td>{team.name}</td>
-                <td>{team.wins}</td>
-                <td>{team.losses}</td>
-                <td>{team.ties}</td>
-                <td>{team.points}</td>
-            </tr>
+            <div className="standings" key={i}>
+                <div>{s++}</div>
+                <div>{team.name}</div>
+                <div>{team.wins}</div>
+                <div>{team.losses}</div>
+                <div>{team.ties}</div>
+                <div>{team.points}</div>
+            </div>
             )
         })
         return (
             <div className="standingsDiv">
-                <table>
-                    <thead>
-                        <tr>
-                        <th>#</th>
-                        <th>Team</th>
-                        <th>Wins</th>
-                        <th>Losses</th>
-                        <th>Ties</th>
-                        <th>Points</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {standingsDisplay}
-                    </tbody>
-                </table>
+                {standingsDisplay}
             </div>
         )
     }

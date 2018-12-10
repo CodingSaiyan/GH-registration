@@ -10,15 +10,17 @@ constructor() {
     super()
 
     this.state = {
-        players: []
+        players: [],
+        name: ""
     }
 }
   componentDidMount() {
     let { id } = this.props.match.params
     axios.get(`/teams/${id}`).then(response => {
-        console.log(response.data.players)
+        console.log(11111111, response.data.players)
         this.setState({
-            players: response.data.players
+            players: response.data.players,
+            name: response.data.players.name
         })
 
     })
@@ -26,12 +28,12 @@ constructor() {
   }
 
   render() {
-    let { id, name, logo, wins, losses, ties, points, firstname } = this.props.teams
+    // let { id, name, logo, wins, losses, ties, points, firstname } = this.props.teams
     let { players } = this.state
-    console.log(111111, this.state.players);
+    console.log(111111, players);
     // console.log('players')
     let playersDisplay = players.map((player, i) => {
-        return <div className="roster">
+        return <div key={i} className="roster">
         <div className="wider">#{player.playernumber}</div>
         <div className="wider">{player.firstname} {player.lastname}</div> 
         <div className="wider">{player.goals} G</div>
@@ -41,10 +43,10 @@ constructor() {
         </div>
     })
 
-    console.log(playersDisplay);
+    console.log(44444, this.state.name);
     return (
       <div className="TeamDiv">
-      <h1>Team Roster</h1>
+      <h1>{this.state.name}'s Roster</h1>
          <div className="container">
             {playersDisplay}
          </div>

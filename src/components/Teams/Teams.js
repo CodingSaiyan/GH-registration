@@ -18,7 +18,7 @@ class Teams extends Component {
     render() {
         let { teams } = this.props;
         let teamsDisplay = teams.map((team, i) => {
-            return (<div className="col teamDiv" key={i}> 
+            return (<div className="col col-xs teamDiv" key={i}> 
                 <Link to={`/teams/${team.id}`} ><h2>{team.name}</h2></Link> 
                 <img src={team.logo} height="200" width="200" alt="" />
                 <p>{team.wins}-{team.losses}-{team.ties}</p>
@@ -27,7 +27,8 @@ class Teams extends Component {
         })
         return (
             <div className="teamsDisplay">
-                <h1>This is the Teams Component!</h1>
+                <h1 className="header">TEAMS IN TOURNAMENT</h1>
+                <hr />
                 <div className="container">
                 <div className="row">
                     {teamsDisplay}

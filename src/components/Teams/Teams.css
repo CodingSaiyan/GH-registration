@@ -1,7 +1,16 @@
 .teamsDisplay {
-    margin-left: 40%;
+    width: 100%;
 }
 
 .spread {
     display: flex;
 } 
+
+.container {
+    width: 100%;
+}
+
+.header {
+    margin-top: 2%;
+    font-weight: bold;
+}

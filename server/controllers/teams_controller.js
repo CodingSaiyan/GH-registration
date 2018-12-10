@@ -66,12 +66,13 @@ module.exports = {
             let { id } = req.params
             let teamResponse = await db.getTeam(id)
             let team = teamResponse[0]
-
+              console.log(222, team)
             let players = await db.getTeamPlayers(team.id)
             
             team.players = players
 
             res.send(team)
+            console.log(333, team)
 
         } catch (error) {
             console.log('error fethcing team:', error)

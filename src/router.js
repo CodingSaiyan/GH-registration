@@ -15,10 +15,10 @@ export default (
   <Switch>
         <Route exact path='/' component={ Landing } />
         <Route exact path='/teams' component={ Teams } />
-        <Route path='/teams/:id' component={ Team } />
-        <Route path='/teams/standings' component={ Standings } />
-        <Route path='/players' component={ Players } />
         <Route path='/teams/team_registration_form' component={ Team_Registration_Form } />
+        <Route path='/teams/standings' component={ Standings } />
+        <Route path='/teams/:id' component={ Team } />
+        <Route path='/players' component={ Players } />
         <Route path="/auth/login" component={Login} />
         <Route path="/auth/register" component={Register} />
   </Switch>

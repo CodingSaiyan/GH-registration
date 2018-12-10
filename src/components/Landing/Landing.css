@@ -1,9 +1,9 @@
-/* 
+
 .landing {
-    display: flex;
-    width: 70%;
+    /* display: flex; */
+    /* width: 100%; */
     
-} */
+}
 
 
 /* .menu-filler {
@@ -44,7 +44,7 @@ span:hover {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
-    margin-left: 20%;
+    /* margin-left: 20%; */
 }
 
 /* .sidebar-container {

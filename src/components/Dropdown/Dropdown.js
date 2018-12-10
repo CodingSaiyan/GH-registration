@@ -26,7 +26,7 @@ class Dropdown extends React.Component {
 
     <div id="collapseOne" className="collapse" aria-labelledby="headingOne" >
       <div className="card-body gcard">
-          <Link to='/registration' ><div className="g-menu"><a href="#" >REGISTER</a></div></Link>
+          <Link to='/auth/register' ><div className="g-menu"><a href="#" >REGISTER</a></div></Link>
           <Link to='/teams'><div className="g-menu"><a href="#" >TEAMS</a></div></Link>
           <Link to='/teams/standings'><div className="g-menu"><a href="#" >STANDINGS</a></div></Link>
           <Link to="/players"><div className="g-menu"><a href="#" >STATS</a></div></Link>
