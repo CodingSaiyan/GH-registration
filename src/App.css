@@ -38,7 +38,7 @@ body {
 @media(max-width: 768px){
   .App {
     background: #2C2923;
-    width: 110%;
+    width: 100%;
     flex-direction: column;
     margin: 0;
     padding: 0;
