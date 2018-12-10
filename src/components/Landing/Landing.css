@@ -1,32 +1,4 @@
 
-.landing {
-    /* display: flex; */
-    /* width: 100%; */
-    
-}
-
-
-/* .menu-filler {
-    background: #2C2923;
-    width: 400px;
-    width: 15%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    
-} */
-
-/* .sidebar-filler {
-    background: #2C2923;
-    width: 400px;
-    width: 20.5%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-
-    
-} */
-
 span {
     color: #FDBF13;
 }
@@ -54,12 +26,6 @@ span:hover {
    
   
 }
-/* .sidebar-container {
-    width: 520px;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-} */
 
 .brady-box {
     background: url('./img/GH_Website-Hero-v4.jpg');
@@ -85,63 +51,16 @@ span:hover {
 
 
 @media (max-width: 1441px) {
-    .landingBody, .landing{
-        width: 100%;
-    }
-}
-
-/* @media (max-width: 1330px) {
-
-    .sidebar-filler {
-        display: none;
-    }
-
-    .menu-filler {
-        width: 35%;
-    }
-
     .landingBody{
         width: 100%;
-        border: 2px solid purple;
-        margin-left: 0;
-    
     }
 }
 
-
-@media (max-width: 1400px) {
-    .sidebar-filler {
-        display: none;
-    }
-
-    .landingBody {
+@media (max-width: 768px) {
+    .landingBody{
         width: 100%;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+
     }
 }
-
-@media (max-width: 1080px) {
-    .sidebar-filler {
-        width: 300px;
-    }
-}
-
-@media (max-width: 902px) {
-    .landingBody {
-        background: #2C2923;
-    }
-}
-
-@media(max-width: 542px) {
-    .landingBody {
-     display: none;
-    }
-  
-    .landing {
-        display: none;
-    }
-
-    .menu-filler {
-        display: none;
-    }
-} */
-

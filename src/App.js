@@ -49,6 +49,14 @@ class App extends Component {
               { router }
               <Sidebar />
         </div>
+
+{/* <div className="App container-fluid">
+<div className="row">
+ <div className="col">{displayDropdown}</div>
+      <div className="col">{ router }</div>
+     <div className="col"><Sidebar /></div> 
+</div>
+</div> */}
       
   }
 }
