@@ -33,7 +33,7 @@ class Standings extends Component {
         return (
             <div className="standingsDiv">
             <h1>Standings</h1>
-            <div className="container">
+            <div className="container" id="stats">
                 {standingsDisplay}
             </div>
             </div>

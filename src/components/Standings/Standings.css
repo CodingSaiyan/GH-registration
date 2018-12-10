@@ -13,3 +13,14 @@
     padding: 3px;
 
 }
+
+@media (max-width: 768px) {
+    .standingsDiv{
+        width: 100%;
+    }
+
+    #stats {
+        width: 100%;
+        padding-bottom: 100px;
+    }
+}

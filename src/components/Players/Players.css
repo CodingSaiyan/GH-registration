@@ -37,10 +37,6 @@ div.card {
 }
 
 
-.container {
-    width: 58%;
-}
-
 .playerStats {
     display: flex;
     justify-content: space-between;
@@ -79,3 +75,7 @@ div.card {
     background: #949494;
 }
 
+
+@media (max-width: 768px) {
+    
+}

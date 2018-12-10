@@ -8,22 +8,38 @@
     display: flex;
 } 
 
-.container {
-    width: 100%;
-    
-}
 
 .header {
     margin-top: 2%;
     font-weight: bold;
+    
 }
 
 .teamDiv {
-   
+    /* border: 2px solid green; */
     margin: 10px 20px;
     
 }
 
-.fluid-container {
+
+@media(max-width: 768px) {
+    .teamsDisplay {
+        margin: 0 auto;
+        width: 100%;
     
+    }
+    
+    .myContainer {
+        width: 95%;
+    }
+
+    .header {
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+    .teamDiv {
+        
+        width: 100%;
+    }
 }
