@@ -54,7 +54,7 @@ class Landing extends Component {
           
             <div className="landingBody">
                 <div className="image"><img src={jersey} className="image" alt="" /></div>
-                <div>
+                <div className="weather">
                     <p>{city}, {state}</p>
                     {/* <p>{date}</p> */}
                     <p>{tempurature}&#176;</p>
@@ -66,14 +66,14 @@ class Landing extends Component {
             :
             <div className="landingBody">
             <div className="image"><img src={jersey} className="image" alt="" /></div>
-            <div>
+            <div className="weather">
                 <p>{city}, {state}</p>
                 {/* <p>{date}</p> */}
                 <p>{tempurature}&#176;</p>
                 <p>{condition}</p>
                 {/* <img src={image} height={height} width={width} /> */}
             </div>
-            <div><h5><i class="fas fa-user-plus"></i> <Link to="/auth/register" ><span>Register</span></Link> / <Link to="/auth/login" ><span>Login</span></Link> <i class="fas fa-sign-in-alt"></i></h5></div>
+            <div ><h5 className="regLogin"><i class="fas fa-user-plus"></i> <Link to="/auth/register" ><span>Register</span></Link> / <Link to="/auth/login" ><span>Login</span></Link> <i class="fas fa-sign-in-alt"></i></h5></div>
         </div>
     )
     }

@@ -61,7 +61,18 @@ span:hover {
         width: 100%;
         flex-direction: column-reverse;
         justify-content: flex-end;
+        
 
+    }
+
+    .regLogin{
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .weather {
+        margin: 40px auto;
+        
     }
 
     .image {
